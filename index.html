@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Simple note-taking application" />
+    <title>Simple Notes App candra</title>
+    <link rel="stylesheet" href="style.css" /> 
+    <!-- goggle font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header>
+      <h1 class="bebas-neue-regular">Candra Notes</h1>
+    </header>
+
+    <main>
+      <!-- container -->
+      <div class="container">
+
+        <!-- item grid 1 menampilkan catatan-->
+        <div class="notes-container kanan atas">
+          <div id="notes">
+            <p class="title1">Disini Catatan akan di tampilkan</p>
+            <hr />
+          </div>
+        </div>
+
+        <!-- item grid 2 form catatan -->
+        <div class="add-note kiri bawah">
+          <p class="title2 ">Tambahkan catatanmu disini</p>
+          <div class="form-container">
+            <input type="text" id="username-input" placeholder="nama ..."/>
+            <input type="text" id="note-input" placeholder="Tulislah hal penting disini ..." />
+            <button type="submit" onclick="addNote()">Tambahkan</button>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- memangil script javascript -->
+    <script src="script.js"></script>
+  </body>
+</html>

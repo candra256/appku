@@ -1,0 +1,245 @@
+/* inisialisasi variabel atau penampungan untuk warna yang di perlukan */
+:root {
+  --primary-bg-color: rgb(30, 31, 30);
+  --secondary-bg-color: rgb(255, 255, 255);
+  --border-color: #006496;
+  --highlight-color: #006496;
+  --button-hover-color: #23a6df;
+}
+
+/* menghilangkan semua margin dan padding bawaan browsur */
+*,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--secondary-bg-color);
+  height: 500px;
+}
+
+/* container pembungkus yang terdiri dari 2 item yaitu kotak input dan
+   kotak tampilkan catatan */
+
+.container {
+  background-color: var(--primary-bg-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  grid-template-areas: "kiri kanan"; 
+  margin: 2rem auto;
+  max-width: 1200px;
+  padding: 1rem;
+}
+
+ .kanan {
+  grid-area: kanan;
+}
+
+.kiri {
+  grid-area: kiri;
+} 
+
+/* memperindah header dengan menambahakn background color */
+/* membuatnya berada di tengah dengan display flex  */
+/* dan menambahkan padding sebesar 1rem  */
+header {
+  background-color: #109ac5;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#notes {
+  height: 100%;
+  border: 5px solid var(--border-color);
+  border-radius: 2%;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-color: #fff;
+  overflow: auto;
+  display: block;
+}
+
+#notes::-webkit-scrollbar {
+  width: 0; /* Lebar scrollbar */
+}
+
+.notes-container {
+  display: block;
+  background-color: rgb(13, 13, 12);
+  height: 500px;
+}
+
+.add-note {
+  background-color: var(--secondary-bg-color);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.form-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0.8rem;
+}
+
+input[type="text"] {
+  padding: 20px;
+  border: 5px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: var(--highlight-color);
+  outline: none;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--highlight-color);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--button-hover-color);
+}
+
+.note {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #1f2020;
+}
+
+.note-text {
+  flex-grow: 1;
+  color: #fff;
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: darkred;
+}
+
+.add-note .title2 {
+  font-size: 30px;
+  margin-top: 5px;
+}
+
+#notes .title1 {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2px;
+}
+
+/* kebutuhan responsif saat di buka pada layar 600px atau di bawahnya */
+
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "atas"
+      "bawah";
+  }
+
+  .atas {
+    grid-area: atas;
+  }
+
+  .bawah {
+    grid-area: bawah;
+  }
+
+  .notes-container {
+    height: 250px;
+  }
+
+  .add-note {
+    padding: 1rem;
+  }
+
+  .add-note .title2 {
+    font-size: 20px;
+  }
+
+  #notes .title1 {
+    font-size: 20px;
+  }
+}
+
+/* font */
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.teko-catatan {
+  font-family: "Teko", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.rajdhani-light {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.rajdhani-regular {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.rajdhani-medium {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.rajdhani-semibold {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.rajdhani-bold {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
